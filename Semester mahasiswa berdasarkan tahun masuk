@@ -1,0 +1,24 @@
+Menentukan Semester Mahasiswa Berdasarkan Tahun Masuk
+Mulai
+Input tahun masuk mahasiswa (tahun_masuk)
+Input tahun saat ini (tahun_saat_ini)
+Input bulan saat ini (bulan_saat_ini)
+Hitung selisih tahun antara tahun saat ini dan tahun masuk: [ \text{selisih_tahun} = \text{tahun_saat_ini} - \text{tahun_masuk} ]
+Hitung semester berdasarkan selisih tahun dan bulan saat ini:Jika bulan saat ini <= 6 (semester genap), maka: [ \text{semester} = (\text{selisih_tahun} \times 2) + 2 ]Jika bulan saat ini > 6 (semester ganjil), maka: [ \text{semester} = (\text{selisih_tahun} \times 2) + 1 ]
+Output semester mahasiswa
+Selesai
+def hitung_semester(tahun_masuk):
+    # Mendapatkan tahun dan bulan saat ini
+    tahun_saat_ini = datetime.now().year
+    bulan_saat_ini = datetime.now().month
+    
+    # Menghitung selisih tahun
+    selisih_tahun = tahun_saat_ini - tahun_masuk
+    
+    # Menentukan semester berdasarkan bulan saat ini
+    if bulan_saat_ini <= 6:
+        semester = (selisih_tahun * 2) + 2
+    else:
+        semester = (selisih_tahun * 2) + 1
+    
+    return semester
